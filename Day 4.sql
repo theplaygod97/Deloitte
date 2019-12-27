@@ -109,4 +109,37 @@ select roll,Name from Stu where Roll > any(SELECT rOLL FROM FEES)
 select roll,Name from Stu where Roll > aLL(SELECT rOLL FROM FEES)
 
 SELECT AMOUNT FROM FEES WHERE ROLL =(SELECT ROLL FROM STU WHERE NAME ='Sai')
+                                              
+                                              
+----------------------------------------------------------------------------
+
+
+Corealted sub query
+                                              
+create table emp100
+(
+	empId integer,
+	empName varchar(20),
+	sal integer,
+	deptno integer
+)
+
+
+insert into emp100 values(1,'Tufail',980000,1);
+insert into emp100 values(2,'Ahmed',80000,1);
+insert into emp100 values(3,'Khan',90000,2);
+insert into emp100 values(4,'Tarun',20000,2);
+insert into emp100 values(5,'Neha',950000,2);
+
+update emp100 a
+         set a.sal = (select avg(sal) from emp100 b where a.deptno = b.deptno )
+where sal < (select avg(sal) from emp100 c where a.deptno = c.deptno)
+                                              
+delete from emp100 a
+        where a.sal = (select max(sal) from emp100 b where a.deptno = b.deptno )
+
+select * from emp100
+
+                                             
+
 
