@@ -1,0 +1,59 @@
+Create a table called Employee with the following Columns  and perform the following operations:-
+------------------------------------------------------------------------------------------------------------
+
+EmployeeID
+EmployeeName
+EmployeeAddress
+DOB
+DOJ
+Salary
+
+create table empassign(
+EmployeeID integer,
+EmployeeName varchar(20),
+EmployeeAddress varchar(20),
+DOB date,
+DOJ date,
+Salary integer
+)
+
+a.) Insert five records
+
+insert into empassign values(1,'Tufail','Bengaluru','10-5-1990','6-2-2015',12000);
+insert into empassign values(2,'Ahmed','Delhi','1-7-1996','6-10-2016',24000);
+insert into empassign values(3,'Roshan','Mumbai','9-5-1980','7-6-2010',15000);
+insert into empassign values(4,'James','UK','8-9-1995','6-10-2013',240000);
+insert into empassign values(5,'Tom','US','10-6-1994','6-2-2009',120000);
+
+b) Retrieve all the records
+
+select * from empassign
+
+c) Retrieve the Employee name whose salary is greater than 20000
+
+select EmployeeName where Salary > 20000
+
+d) Retrieve the Employee name whose address contains 'a' or 'p' or 'r'  as the last character
+
+select * from empassign where EmployeeAddress  like ('%a') or EmployeeAddress like ('%P') or EmployeeAddress like('%i')
+ 
+e) Increase the Salary of all the Employee by 20%
+
+update empassign
+           set salary = salary +(salary *20)/100
+
+f) Delete all the employee records whose salary is less than 5000
+update empassign
+           delete salary where salary < 5000
+
+
+g) Add another column Email and update the contents.
+
+Alter table empassign add email varchar(5);
+
+update empassign set email='GMAIL' where EmployeeID = 1
+update empassign set email='YAHOO' where EmployeeID = 2
+update empassign set email='REDIF' where EmployeeID = 3
+update empassign set email='GMAIL' where EmployeeID = 4
+update empassign set email='OUTLK' where EmployeeID = 5
+
