@@ -26,8 +26,6 @@ on CUS.CUSTOMER_ID=ACC.CUSTOMER_ID
 where ACC.ACCOUNT_NO is not null;
 
 
-
-
 4.*Write a query which will display the customer id, customer name, gender, marital status along with the unique reference string and
  sort the records based on customer id in descending order. <br/>
 <br/><b>Hint:  </b>Generate unique reference string as mentioned below
@@ -161,10 +159,9 @@ and Initial_Deposit= (Select Max(C.Initial_Deposit) from ACCOUNT_INFO C)
 15.*Write a query to display the customer id, customer name, account number, account type, interest, bank name 
 and initial deposit amount of the customers who are getting maximum interest rate.
 
-Sol :select a.customer_id, c.customer_name, a.account_no, a.account_type, a.interest, b.bank_name ,a.initial_deposit
-from account_info a , customer_personal_info c , bank_info b
-where a.ifsc_code = b.ifsc_code and a.customer_id = c.customer_id
-and a.interest = ( select max(interest) from account_info)
-
+Sol :select A.Customer_Id, C.Customer_Name, A.Account_No, A.Account_Type, A.Interest, B.Bank_Name ,A.Initial_Deposit
+from Account_Info A , Customer_Personal_Info C , Bank_Info B
+where A.Ifsc_Code = B.Ifsc_Code and A.Customer_Id = C.Customer_Id
+and A.Interest = ( select max(Interest) from Account_Info)
 
 
