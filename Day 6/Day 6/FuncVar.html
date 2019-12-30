@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+total = 0;//Global Variable
+function sum(){
+	y=20;
+	var x=10;//Local
+	total = x+y;
+	
+}
+function display(){
+	sum();
+	alert(total);//30
+	alert(y);//20
+	alert(x);//Error
+}
+</script>
+</head>
+<body>
+<script>
+display();
+</script>
+</body>
+</html>

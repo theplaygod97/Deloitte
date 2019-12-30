@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+	
+var fullname = prompt("Please enter your fullname", "Tufail Ahmed"); // Ask user for fullname
+
+var getInitials = function (string) {
+    var names = string.split(' '),
+        initials = names[0].substring(0, 1).toUpperCase();
+    
+    if (names.length > 1) {
+        initials = names[0].substring(0, 1).toUpperCase() 
+        + " " + names[1].toUpperCase(); //only will work for Firstname + Lastname 
+                                       //(Middlename or multiple lastname not considered)
+    }
+    return initials;
+};
+var res = confirm("Want INITIALS :");
+if(res == true){
+document.write("HELLO, "+getInitials(fullname));
+}
+else{
+document.write("HELLO, "+fullname)
+}
+
+</script>
+</head>
+<body>
+
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<img src = "EBILL.jpg" height ="300"width="300" alt="Image is Loading">
+<br>
+<script>
+var bill = prompt("Please enter your Bill Amount", "");
+var today = new Date();
+var billdate = new Date();
+billdate.setFullYear(2019,11,15); //15th on the current month
+if(billdate > today){
+document.write("Bill Amount "+bill )		
+}
+
+else{
+	var day = 1000 * 60 *60 *24; // no of milliseconds in a day
+	var x = (today - billdate)/day;
+	var extrabill = parseInt(bill) + parseInt(15) * parseInt(x); //bill + 15 * no of due days
+	document.write("Bill Amount "+extrabill )
+}
+
+</script>
+<body>
+
+
+</body>
+</html>

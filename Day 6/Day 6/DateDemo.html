@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<img src = "HNY.png" height ="300"width="300" alt="Image is Loading">
+<br>
+<script>
+var today = new Date();
+var lastdate = new Date();
+lastdate.setFullYear(2020,0,1);
+if(lastdate > today){
+	
+	var day = 1000 * 60 *60 *24;
+	x = (lastdate - today)/day;
+	document.write("Number of days left : "+ x);
+}
+
+else{
+	alert("Time UP")
+}
+
+</script>
+</body>
+</html>
