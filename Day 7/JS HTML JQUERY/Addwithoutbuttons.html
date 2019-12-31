@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<input onchange="fill()"  id=TextBox8 />
+<input  onchange="fill()"  id=TextBox9 />
+<input  id=TextBox10 /> 
+<script>
+
+    function fill() {
+        var txt8 = document.getElementById("TextBox8").value-0;
+        var txt9 = document.getElementById("TextBox9").value-0;
+        document.getElementById("TextBox10").value = txt8 + txt9;
+
+
+    }
+</script>
+<body>
+</body>
+</html>
