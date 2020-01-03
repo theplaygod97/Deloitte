@@ -16,7 +16,8 @@ public class CreateProductTable {
 											+ "qoh int)";
 		statement.execute(query);
 		System.out.println("Done");
-		
+		statement.close();
+		connection.close();
 	}
 
 }
