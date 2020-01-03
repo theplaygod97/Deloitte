@@ -15,6 +15,8 @@ public class DeleteProduct {
 					
 			int rowsAffected = statement.executeUpdate();
 			System.out.println("Delete success with "+rowsAffected+" rows affected.");
+			statement.close();
+			connection.close();
 		}
 
 	}
