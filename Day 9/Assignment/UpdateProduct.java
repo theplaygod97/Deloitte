@@ -23,5 +23,7 @@ public class UpdateProduct {
 			statement.executeUpdate();
 			
 			System.out.println(product.getProductName()+" ,record updated successfully.");
+			statement.close();
+			connection.close();
 		}
 		}
