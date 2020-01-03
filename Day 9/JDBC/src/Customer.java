@@ -5,7 +5,7 @@ public class Customer implements Serializable,Comparable<Customer>{
 private int CustomerId;
 private String CustomerName;
 private String CustomerAdd;
-private transient int billAmount;   //Rejects user IP and stores default value only
+private int billAmount;   //Rejects user IP and stores default value only
 
 
 public Customer(int customerId, String customerName, String customerAdd, int billAmount) {
