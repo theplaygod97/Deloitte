@@ -26,6 +26,8 @@ public static void main(String[] args) throws IOException, SQLException {
 					+" "+rs.getString(3)
 					+" "+rs.getInt(4));  
 			}	
+			statement.close();
+			connection.close();
 		}
 
 	}
