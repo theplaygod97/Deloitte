@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MyfirstServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Welcome</display-name>
+    <servlet-name>Welcome</servlet-name>
+    <servlet-class>com.Welcome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Welcome</servlet-name>
+    <url-pattern>/Welcome</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerDetails</display-name>
+    <servlet-name>CustomerDetails</servlet-name>
+    <servlet-class>com.CustomerDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerDetails</servlet-name>
+    <url-pattern>/CustomerDetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerDetail</display-name>
+    <servlet-name>CustomerDetail</servlet-name>
+    <servlet-class>com.CustomerDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerDetail</servlet-name>
+    <url-pattern>/CustomerDetail</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginForm</display-name>
+    <servlet-name>LoginForm</servlet-name>
+    <servlet-class>com.LoginForm</servlet-class>
+   <init-param>
+    <param-name>username</param-name>
+    <param-value>Satya</param-value>
+  </init-param>
+
+  <init-param>
+    <param-name>companyname</param-name>
+    <param-value>Deloitte</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginForm</servlet-name>
+    <url-pattern>/LF</url-pattern>
+    <url-pattern>/.*abc</url-pattern>
+  </servlet-mapping>
+ 
+ <context-param>
+ <param-name>ItemName</param-name>
+ <param-value>Laptop</param-value>
+ </context-param>
+  
+
+</web-app>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login form</title>
+<script>
+function validate(){
+	//alert("validate called");
+	var uname=document.getElementById("username").value;
+	var pname=document.getElementById("password").value;
+	var cpname=document.getElementById("confirmpassword").value;
+	if(uname.length==0){
+		alert("Please enter your details again properly");
+		return false;
+		}
+	else if(pname.length < 3){
+		alert("Enter Pass of length 3");
+		return false;
+		}
+	else if(pname == cpname){
+		alert("Welcome "+uname);
+		}
+	else{
+		alert("Pass and Conf Pass not same");
+		return false;
+		}
+	
+}
+</script>
+</head>
+<body>
+<form action = "LF" method = "post" onsubmit = "return validate()">
+<h2>Login form</h2>
+<table cellspacing="10" cellpadding="10" border="0" align="center">
+
+<tr>
+<td>User Name:<input type="text" name="username" id="username"/></td>
+</tr>
+<tr>
+<td>Password :<input type="password" name="password" id="password"/></td>
+</tr>
+<tr>
+<td>ConfirmPassword :<input type="password" name="confirmpassword" id="confirmpassword"/></td>
+</tr>
+<tr>
+<td>
+<input type="submit" value="Submit" id="submit"/>
+</td>
+<td><input type="reset"  id="reset"/></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
