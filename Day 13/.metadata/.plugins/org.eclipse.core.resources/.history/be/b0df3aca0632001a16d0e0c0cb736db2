@@ -1,0 +1,92 @@
+package manytomany;
+
+import java.util.Set;
+
+public class EmployeeDetails {
+		private int employeeId;
+		private String employeename;
+		private int employeeSalary;
+		private Set employeeAddress;
+		
+		public EmployeeDetails() {
+			// TODO Auto-generated constructor stub
+		}
+
+		public EmployeeDetails(int employeeId, String employeename, int employeeSalary, Set employeeAddress) {
+			super();
+			this.employeeId = employeeId;
+			this.employeename = employeename;
+			this.employeeSalary = employeeSalary;
+			this.employeeAddress = employeeAddress;
+		}
+
+		public int getEmployeeId() {
+			return employeeId;
+		}
+
+		public void setEmployeeId(int employeeId) {
+			this.employeeId = employeeId;
+		}
+
+		public String getEmployeename() {
+			return employeename;
+		}
+
+		public void setEmployeename(String employeename) {
+			this.employeename = employeename;
+		}
+
+		public int getEmployeeSalary() {
+			return employeeSalary;
+		}
+
+		public void setEmployeeSalary(int employeeSalary) {
+			this.employeeSalary = employeeSalary;
+		}
+
+		public Set getEmployeeAddress() {
+			return employeeAddress;
+		}
+
+		public void setEmployeeAddress(Set employeeAddress) {
+			this.employeeAddress = employeeAddress;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((employeeAddress == null) ? 0 : employeeAddress.hashCode());
+			result = prime * result + employeeId;
+			result = prime * result + employeeSalary;
+			result = prime * result + ((employeename == null) ? 0 : employeename.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			EmployeeDetails other = (EmployeeDetails) obj;
+			if (employeeAddress == null) {
+				if (other.employeeAddress != null)
+					return false;
+			} else if (!employeeAddress.equals(other.employeeAddress))
+				return false;
+			if (employeeId != other.employeeId)
+				return false;
+			if (employeeSalary != other.employeeSalary)
+				return false;
+			if (employeename == null) {
+				if (other.employeename != null)
+					return false;
+			} else if (!employeename.equals(other.employeename))
+				return false;
+			return true;
+		}
+		
+}

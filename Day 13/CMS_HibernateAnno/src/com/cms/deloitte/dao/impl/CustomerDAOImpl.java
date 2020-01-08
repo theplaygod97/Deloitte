@@ -1,0 +1,84 @@
+package com.cms.deloitte.dao.impl;
+
+import java.io.IOException;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.classic.Session;
+
+import com.cms.deloitte.dao.CustomerDAO;
+import com.cms.deloitte.model.Customer;
+
+public class CustomerDAOImpl implements CustomerDAO{
+	
+	AnnotationConfiguration configuration =null;
+	SessionFactory factory = null;
+	
+public CustomerDAOImpl() {
+	configuration = new AnnotationConfiguration().configure().addAnnotatedClass(Customer.class);
+	factory = configuration.buildSessionFactory();
+}
+	@Override
+	public boolean addCustomer(Customer customer) {
+		
+		org.hibernate.Session session = factory.openSession();
+		
+		Transaction transcation = session.beginTransaction();
+		session.save(customer);
+		transcation.commit();
+		return false;
+	}
+
+	@Override
+	public boolean updateCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Customer> listCustomers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public List<Customer> filterCustomers(int billAmount) {
+		Session session = factory.openSession();
+		Query query = session.createQuery
+				("select c.customerName from Customer c where c.billAmount > "+billAmount);
+		return query.list();
+	}
+
+	@Override
+	public Customer findCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isCustomerExists(int customerId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	
+
+}

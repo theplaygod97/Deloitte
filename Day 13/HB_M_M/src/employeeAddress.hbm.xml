@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="manytomany.EmployeeDetails" table="hr.DelEmployee">
+
+		<id name="employeeId" column="Empid" />
+		<property name="employeeName" column="Empname" length="10" />
+		<property name="employeeSalary" column="EmpSalary"
+			length="10" />
+
+		<set name="employeeAddress" cascade="save-update"  table="hr.DelEmpAdd">
+				<key column="Empid" />
+				<many-to-many column="Aid" class="manytomany.AddressDetails"></many-to-many>
+		</set>
+	</class>
+	
+	<class name="manytomany.AddressDetails"   table="hr.DelAddress">
+
+		<id name="addressId" column="Aid" />
+		<property name="cityName" column="CityName" length="10" />
+		<property name="stateName" column="State"
+			length="10" />
+
+	</class>
+	
+</hibernate-mapping>

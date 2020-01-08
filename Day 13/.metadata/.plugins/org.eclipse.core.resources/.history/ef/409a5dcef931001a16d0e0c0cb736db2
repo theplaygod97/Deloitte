@@ -1,0 +1,92 @@
+package com.cms.deloitte.client;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.cms.deloitte.dao.impl.CustomerDAOImpl;
+import com.cms.deloitte.model.Customer;
+
+public class LaunchCustomerApplication {
+	
+	public static void startCustomerApp() {
+		System.out.println("#####WELCOME TO CUSTOMER APP#####");
+		System.out.println("1.Add Customer");
+		System.out.println("2.Update Customer");
+		System.out.println("3.Delete Customer");
+		System.out.println("4.Exit");
+		System.out.println("5.Show All");
+		System.out.println("6.Fetch");
+		System.out.println("7.IsExists");
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter your choice [1-7]");
+		int Choice = scanner.nextInt();
+		CustomerDAOImpl impl= new CustomerDAOImpl();
+		Customer customer = new Customer();
+		switch(Choice) {
+		case 1:
+			
+			System.out.println("Enter CustomerID");
+			int ID = scanner.nextInt();
+			if(impl.isCustomerExists(ID)) {
+			System.out.println("Customer exists");		
+			}else {
+			customer.acceptCustomerDetails(ID);
+			System.out.println(impl.addCustomer(customer));	
+			}
+			
+			break;
+		case 2:
+			System.out.println("Enter CustomerID");
+			ID = scanner.nextInt();
+			if(impl.isCustomerExists(ID)) {
+				customer.updateCustomerDetails(ID);
+				System.out.println(impl.updateCustomer(customer));	
+			
+			}else {
+				System.out.println("Customer doesn't exists");		
+			}
+			break;
+		case 3:
+			System.out.println("Enter CustomerID");
+			ID = scanner.nextInt();
+			if(impl.isCustomerExists(ID)) {
+			System.out.println("Customer exists");
+			System.out.println(impl.deleteCustomer(ID));	
+			}else {
+			System.out.println("Customer Doesn't Exists");	
+			}
+			
+		case 4:
+			System.out.println("Thank you,exiting");
+			System.exit(0);
+			break;
+		case 5:
+			List<Customer> result3 = impl.listCustomers();
+			System.out.println(result3);
+			break;
+		case 6:
+			System.out.println("Enter CustomerID");
+			ID = scanner.nextInt();
+			if(impl.isCustomerExists(ID)) {
+			System.out.println("Customer exists");
+			customer.fetchCustomer(ID);
+			Customer result4 = impl.findCustomer(customer);
+			System.out.println(result4);
+			}else {
+			System.out.println("Customer Doesn't Exists");	
+			}
+			break;
+		case 7:
+			System.out.println("Enter customer id :");
+			int customerId = scanner.nextInt();
+			boolean result5 = impl.isCustomerExists(customerId);
+			System.out.println(result5);
+			break;
+		default:
+			System.out.println("Please enter correct Input");
+			break;
+		}
+		
+	}
+}
