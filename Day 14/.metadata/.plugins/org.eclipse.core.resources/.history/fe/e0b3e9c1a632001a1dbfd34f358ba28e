@@ -1,0 +1,67 @@
+package com;
+
+public class Employee {
+private int employeeTd;
+private String employeeString;
+
+public Employee() {
+	// TODO Auto-generated constructor stub
+}
+
+public Employee(int employeeTd, String employeeString) {
+	super();
+	this.employeeTd = employeeTd;
+	this.employeeString = employeeString;
+}
+
+public int getEmployeeTd() {
+	return employeeTd;
+}
+
+public void setEmployeeTd(int employeeTd) {
+	this.employeeTd = employeeTd;
+}
+
+public String getEmployeeString() {
+	return employeeString;
+}
+
+public void setEmployeeString(String employeeString) {
+	this.employeeString = employeeString;
+}
+
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((employeeString == null) ? 0 : employeeString.hashCode());
+	result = prime * result + employeeTd;
+	return result;
+}
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Employee other = (Employee) obj;
+	if (employeeString == null) {
+		if (other.employeeString != null)
+			return false;
+	} else if (!employeeString.equals(other.employeeString))
+		return false;
+	if (employeeTd != other.employeeTd)
+		return false;
+	return true;
+}
+
+@Override
+public String toString() {
+	return "Employee [employeeTd=" + employeeTd + ", employeeString=" + employeeString + "]";
+}
+
+
+}

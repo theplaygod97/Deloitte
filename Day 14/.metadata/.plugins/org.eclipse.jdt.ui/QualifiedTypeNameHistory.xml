@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.hibernate.Criteria"/>
+<fullyQualifiedTypeName name="org.hibernate.criterion.Restrictions"/>
+<fullyQualifiedTypeName name="com.Sum"/>
+<fullyQualifiedTypeName name="com.cms.deloitte.dao.CustomerDAO"/>
+<fullyQualifiedTypeName name="com.cms.deloitte.dao.impl.CustomerDAOImplTest"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.cms.deloitte.model.Customer"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="com.Employee"/>
+<fullyQualifiedTypeName name="com.RegularEmployee"/>
+</qualifiedTypeNameHistroy>

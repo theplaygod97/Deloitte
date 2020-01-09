@@ -1,0 +1,40 @@
+14:12:04,567 ERROR SchemaUpdate:148 - Unsuccessful: create table hr.ContractEmp_TPCS (employeeId number(10,0) not null, Empname varchar2(10), contractDuration number(10,0), payPerDay number(10,0), primary key (employeeId))
+14:12:04,570 ERROR SchemaUpdate:149 - ORA-00955: name is already used by an existing object
+
+14:12:04,572 ERROR SchemaUpdate:148 - Unsuccessful: create table hr.Employee_TPCS (Empid number(10,0) not null, Empname varchar2(10), primary key (Empid))
+14:12:04,572 ERROR SchemaUpdate:149 - ORA-00955: name is already used by an existing object
+
+14:12:04,574 ERROR SchemaUpdate:148 - Unsuccessful: create table hr.RegularEmp_TPCS (employeeId number(10,0) not null, Empname varchar2(10), salary number(10,0), bonus number(10,0), primary key (employeeId))
+14:12:04,575 ERROR SchemaUpdate:149 - ORA-00955: name is already used by an existing object
+
+14:12:04,630 ERROR JDBCExceptionReporter:58 - ORA-00001: unique constraint (HR.SYS_C007160) violated
+
+14:12:04,631 ERROR JDBCExceptionReporter:58 - ORA-00001: unique constraint (HR.SYS_C007160) violated
+
+14:12:04,634 ERROR AbstractFlushingEventListener:277 - Could not synchronize database state with session
+org.hibernate.exception.ConstraintViolationException: Could not execute JDBC batch update
+	at org.hibernate.exception.ErrorCodeConverter.convert(ErrorCodeConverter.java:74)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:43)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:179)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:72)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:67)
+	at org.hibernate.jdbc.AbstractBatcher.prepareBatchStatement(AbstractBatcher.java:148)
+	at org.hibernate.persister.entity.BasicEntityPersister.insert(BasicEntityPersister.java:1852)
+	at org.hibernate.persister.entity.BasicEntityPersister.insert(BasicEntityPersister.java:2214)
+	at org.hibernate.action.EntityInsertAction.execute(EntityInsertAction.java:46)
+	at org.hibernate.engine.ActionQueue.execute(ActionQueue.java:239)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:223)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:136)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:274)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:27)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:675)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:293)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:86)
+	at com.Client.main(Client.java:34)
+Caused by: java.sql.BatchUpdateException: ORA-00001: unique constraint (HR.SYS_C007160) violated
+
+	at oracle.jdbc.dbaccess.DBError.throwBatchUpdateException(DBError.java:458)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeBatch(OraclePreparedStatement.java:3907)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:57)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:172)
+	... 15 more

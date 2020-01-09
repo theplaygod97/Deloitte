@@ -1,0 +1,25 @@
+package com;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class SumTest {
+
+	@BeforeEach
+	void setUp() throws Exception {
+		Sum sum = new Sum();
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	void testAddNumbers() {
+		assertNotEquals(100,sum.addNumbers(19,20));
+	}
+
+}
