@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="cust" class="com.Customer">
+		<property name="customerId" value ="900"></property>
+		<property name="customerName" value ="Satya"></property>
+		<property name="customerAddress" value ="BBSR"></property>
+		<property name="billAmount" value ="59000"></property>
+		<property name="contactDetails" ref="cd"></property>
+	</bean>
+	
+	
+	<bean id="cd" class="com.ContactDetails">
+		<property name="emailId" value ="Gmail"></property>
+		<property name="mobileNum" value ="700812345"></property>
+	</bean>
+	
+</beans>

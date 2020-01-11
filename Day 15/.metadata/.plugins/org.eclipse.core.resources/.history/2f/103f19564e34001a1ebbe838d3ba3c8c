@@ -1,0 +1,5 @@
+package com.deloitte.pms.dao;
+
+public class ProductDao {
+
+}

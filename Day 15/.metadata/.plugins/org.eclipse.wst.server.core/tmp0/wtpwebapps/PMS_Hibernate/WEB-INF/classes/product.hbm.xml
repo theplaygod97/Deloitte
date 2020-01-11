@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.deloitte.pms.model.Product" table="hr.Product10">
+	
+		<id name="productId" type="int" column="productId">
+			<generator class="assigned"/>
+		</id>
+
+		<property name="productName" column="productName" />
+		<property name="price" column="price"/>
+		<property name="qty" column="qty"/>
+		
+	</class>
+</hibernate-mapping>

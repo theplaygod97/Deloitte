@@ -1,0 +1,25 @@
+<%@ page import="com.Product" %>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%! Product product = new Product(); %>
+<% 	product = (Product)session.getAttribute("proDetails"); %>
+
+<h2>These are the following details of product : </h2>
+<% 
+
+out.println("Product ID : "+product.getProductId()+"<br/>");
+out.println("Product Name : "+product.getProductName()+"<br/>");
+out.println("Product Price : "+product.getPrice()+"<br/>");
+out.println("Product Quantity : "+product.getQoh()+"<br/>");
+
+%>
+</body>
+</html>

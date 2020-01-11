@@ -1,0 +1,9 @@
+package com;
+
+public class AppSpring {
+public static void main(String[] args) {
+	Customer customer = null;
+	customer.setCustomerName("Satya");
+	System.out.println(customer);
+}
+}
