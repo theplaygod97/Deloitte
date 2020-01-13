@@ -1,0 +1,18 @@
+package com.deloitte.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class PageController {
+	
+	@RequestMapping("/doprofile")
+	public String pp() {
+		return "doprofile";
+	}
+	@RequestMapping("/doprofile")
+	public String dpp() {
+		return "dontprofile";
+	}
+
+}

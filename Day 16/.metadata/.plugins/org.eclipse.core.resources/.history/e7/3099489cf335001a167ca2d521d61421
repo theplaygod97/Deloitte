@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login form</title>
+</head>
+<body>
+
+<form action="CustSave.do">
+
+<table>
+
+<caption> <h2>customer form</h2></caption>
+
+
+<tr><td>customer Id</td><td><input type="text" name="customerId" id="customerId"></td></tr>
+
+
+<tr><td>customer name</td><td><input type="text" name="customerName" id="customerName"></td></tr>
+
+<tr><td>customer addresss</td><td><input type="text" name="customerAddress" id="customerAddress"></td></tr>
+
+<tr><td>Bill Amount</td><td><input type="text" name="billAmount" id="billAmount"></td></tr>
+
+<tr><td><input type="submit" value="Save"></td><td><input type="reset" value="Reset" /></td>
+
+<td><input type="submit" value="Save" formaction="updateCustomer"></td><td><input type="reset" value="Reset" /></td></tr>
+
+</table>
+</form>

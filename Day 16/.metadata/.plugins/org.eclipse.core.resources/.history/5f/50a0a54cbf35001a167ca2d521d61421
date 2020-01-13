@@ -1,0 +1,27 @@
+package com;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.config.AppConfig;
+
+public class AppSpring {
+public static void main(String[] args) {
+	
+	//Resource resource = new ClassPathResource("beans.xml");
+	ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+	//BeanFactory factory = new XmlBeanFactory(resource);
+	
+	Customer customer = context.getBean(Customer.class);
+	customer.setCustomerId(1);
+	customer.setCustomerName("Satya");
+	customer.setCustomerAddress("BBSR");
+	customer.setBillAmount(1234);
+	
+	ContactDetails contactDetails = context.getBean(ContactDetails.class);
+	contactDetails.setEmailId("GMAIL");
+	contactDetails.setMobileNum("7008");
+	
+	customer.setContactDetails(contactDetails);
+	System.out.println(customer);
+}
+}

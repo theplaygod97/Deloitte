@@ -1,0 +1,32 @@
+package com;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.config.AppConfig;
+
+public class AppSpring {
+public static void main(String[] args) {
+	
+	//Resource resource = new ClassPathResource("beans.xml");
+	ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+	//BeanFactory factory = new XmlBeanFactory(resource);
+	
+	Email email = context.getBean(Email.class);
+	
+	To to = context.getBean(To.class);
+	to.setToEmail("@deloitte.com");to.setToName("Deloitte HR");
+	
+	From from = context.getBean(From.class);
+	from.setFromName("Satya");from.setFromEmail("@gmail.com");
+	
+	Subject subject = context.getBean(Subject.class);
+	subject.setCaption("Salary");
+	
+	Body body = context.getBean(Body.class);
+	body.setMessage("Salary kab doge");
+		 
+	
+	//customer.setContactDetails(contactDetails);
+	System.out.println(email);
+}
+}

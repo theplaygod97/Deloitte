@@ -1,0 +1,21 @@
+package com.deloitte.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.deloitte.dao.CustomerDAO;
+import com.cms.deloitte.dao.impl.CustomerDAOImpl;
+import com.cms.deloitte.model.Customer;
+@Controller
+public class CustomerController {
+	
+	
+	CustomerDAO customerDAO = new CustomerDAOImpl();
+	@RequestMapping("/CustSave")
+	public String saveCustomerDetails(Customer customer) 
+	{
+		System.out.println(customer);
+		customerDAO.addCustomer(customer);
+		return "result";
+	}
+}

@@ -1,0 +1,13 @@
+package com.deloitte.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cms.deloitte.model.Customer;
+@Controller
+public class CustomerController {
+	@RequestMapping("/CustSave")
+	public String saveCustomerDetails(Customer customer) {
+		return "result";
+	}
+}
