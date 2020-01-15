@@ -1,0 +1,69 @@
+package com.pms.deloitte.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.pms.deloitte.dao.ProductDAO;
+import com.pms.deloitte.model.Product;
+
+public class ProductServiceImpl implements ProductService {
+	
+	@Autowired
+	ProductDAO productDAO;
+	
+	@Override
+	public void addProduct(Product product) {
+		productDAO.save(product);
+
+	}
+
+	@Override
+	public void deleteProduct(int productId) {
+		productDAO.deleteById(productId);
+
+	}
+
+	@Override
+	public void updateProduct(Product product) {
+		if(productDAO.existsById(product.getProductId()));
+		productDAO.save(product);
+	}
+
+	@Override
+	public Product getProduct(int productId) {
+		Optional<Product> optionalproduct = productDAO.findById(productId);
+		Product product = new Product();
+		if(optionalproduct.isPresent()) {
+			product = optionalproduct.get();
+		}
+		return product;
+	}
+
+	@Override
+	public boolean isproductExists(int productId) {
+		
+		return productDAO.existsById(productId);
+	}
+
+	@Override
+	public List<Product> listProducts() {
+		
+		return (List<Product>) productDAO.findAll();
+	}
+
+	@Override
+	public List<Product> listProducts(String productName) {
+		
+		return productDAO.findByProductName(productName);
+	}
+
+	@Override
+	public List<Product> listProducts(int price) {
+		
+		return productDAO.findByPrice(price);
+	}
+
+}

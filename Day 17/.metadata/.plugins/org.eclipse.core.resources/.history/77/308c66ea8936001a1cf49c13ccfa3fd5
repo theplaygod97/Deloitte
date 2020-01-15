@@ -1,0 +1,53 @@
+package com.cms.deloitte.service.impl.copy;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.cms.deloitte.dao.CustomerDAO;
+import com.cms.deloitte.model.Customer;
+import com.cms.deloitte.service.CustomerService;
+
+public class CustomerServiceImpl implements CustomerService{
+
+	
+	@Autowired
+	CustomerDAO customerDAO;
+	
+	@Override
+	public boolean addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return customerDAO.addCustomer(customer);
+	}
+
+	@Override
+	public boolean updateCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return customerDAO.updateCustomer(customer);
+	}
+
+	@Override
+	public boolean deleteCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Customer> listCustomers() {
+		// TODO Auto-generated method stub
+		return customerDAO.listCustomers();
+	}
+
+	@Override
+	public Customer findCustomer(int customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isCustomerExists(int customerId) {
+		// TODO Auto-generated method stub
+		return customerDAO.isCustomerExists(customerId);
+	}
+
+}

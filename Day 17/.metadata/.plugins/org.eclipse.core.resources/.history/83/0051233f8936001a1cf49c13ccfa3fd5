@@ -1,0 +1,5 @@
+package com.cms.deloitte.service;
+
+public interface CustomerService {
+
+}
